@@ -12,12 +12,6 @@ function [F, M] = controller(t, state, des_state, params)
 %
 %   params: robot parameters
 
-%   Using these current and desired states, you have to compute the desired
-%   controls
-
-
-% =================== Your code goes here ===================
-
 Kd=[1; 1; 1];
 Kp=[100; 100; 800];
 Kd_ang=[1; 1; 1];
@@ -51,7 +45,5 @@ omega_des = [0; 0; des_state.yawdot];
 % Moment
 M = Kp_ang.*(rot_des-state.rot) + ...
     Kd_ang.*(omega_des-state.omega);
-
-% =================== Your code ends here ===================
 
 end
