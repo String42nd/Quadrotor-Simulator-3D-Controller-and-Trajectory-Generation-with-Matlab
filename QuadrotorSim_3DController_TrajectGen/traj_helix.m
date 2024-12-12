@@ -1,5 +1,5 @@
 function [desired_state] = traj_helix(t, state, r, z_max)
-% TRAJ_HELIX generats a helix in the xy plane of r 5m centered about the
+% TRAJ_HELIX a helix in the xy plane of r=5m centered about the
 %   point (0; 0; 0) starting at the point (r; 0; 0).
 %   The z coordinate should start at 0 and end at z_max.
 
