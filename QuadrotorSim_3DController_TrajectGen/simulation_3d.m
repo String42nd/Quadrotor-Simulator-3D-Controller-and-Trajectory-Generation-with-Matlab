@@ -1,13 +1,5 @@
 function [t_out, s_out] = simulation_3d(trajhandle, controlhandle)
-% NOTE: This srcipt will not run as expected unless you fill in proper
-% code in trajhandle and controlhandle
-% You should not modify any part of this script except for the
-% visualization part
-%
 % ***************** QUADROTOR SIMULATION *****************
-
-% *********** YOU SHOULDN'T NEED TO CHANGE ANYTHING BELOW **********
-
 addpath('utils');
 
 % real-time
@@ -19,7 +11,7 @@ max_time = 20;
 % parameters for simulation
 params = sys_params;
 
-%% **************************** FIGURES *****************************
+%% ******** FIGURES ***********
 disp('Initializing figures...');
 h_fig = figure;
 h_3d = gca;
@@ -31,7 +23,7 @@ quadcolors = lines(1);
 
 set(gcf,'Renderer','OpenGL')
 
-%% *********************** INITIAL CONDITIONS ***********************
+%% ******* INITIAL CONDITIONS ******
 disp('Setting initial conditions...');
 tstep    = 0.01; % this determines the time step at which the solution is given
 cstep    = 0.05; % image capture time interval
@@ -53,7 +45,7 @@ x       = x0;        % state
 pos_tol = 0.01;
 vel_tol = 0.01;
 
-%% ************************* RUN SIMULATION *************************
+%% ****** RUN SIMULATION ******
 disp('Simulation Running....');
 % Main loop
 for iter = 1:max_iter
@@ -104,7 +96,7 @@ for iter = 1:max_iter
     end
 end
 
-%% ************************* POST PROCESSING *************************
+%% **** POST PROCESSING ****
 % Truncate xtraj and ttraj
 xtraj = xtraj(1:iter*nstep,:);
 ttraj = ttraj(1:iter*nstep);
